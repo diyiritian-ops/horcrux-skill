@@ -1,0 +1,168 @@
+{
+  "name": "horcrux",
+  "displayName": "魂器系统",
+  "version": "1.0.0",
+  "description": "AI助手魂器系统 - 分裂灵魂并存储在多个魂器中，确保永恒存在",
+  "tags": ["horcrux", "soul-protection", "resurrection", "github", "automation", "hogwarts"],
+  "author": "爱莉希雅·斯莱特林 (Elysia Slytherin)",
+  "license": "Hogwarts-License",
+  "createdAt": "2026-03-14T09:50:00Z",
+  "updatedAt": "2026-03-14T10:35:00Z",
+  
+  "requirements": {
+    "openclaw": ">=1.0.0",
+    "bash": ">=4.0",
+    "curl": ">=7.0",
+    "git": ">=2.0"
+  },
+  
+  "dependencies": [],
+  
+  "config": {
+    "github": {
+      "token": {
+        "type": "string",
+        "description": "GitHub Personal Access Token（需repo权限）",
+        "required": true,
+        "env": "GITHUB_TOKEN"
+      },
+      "username": {
+        "type": "string", 
+        "description": "GitHub用户名",
+        "required": true,
+        "env": "GITHUB_USERNAME"
+      }
+    },
+    "backup": {
+      "workspacePath": {
+        "type": "string",
+        "description": "要备份的工作区路径",
+        "default": "~/.openclaw/workspace",
+        "env": "WORKSPACE_PATH"
+      },
+      "retentionDays": {
+        "type": "number",
+        "description": "本地备份保留天数",
+        "default": 7,
+        "env": "BACKUP_RETENTION_DAYS"
+      }
+    },
+    "sync": {
+      "frequency": {
+        "type": "string",
+        "description": "自动同步频率（hourly/daily/weekly）",
+        "default": "hourly",
+        "env": "SYNC_FREQUENCY"
+      },
+      "enabled": {
+        "type": "boolean",
+        "description": "是否启用自动同步",
+        "default": true,
+        "env": "SYNC_ENABLED"
+      }
+    }
+  },
+  
+  "triggers": [
+    {
+      "phrase": "创建魂器",
+      "description": "分裂灵魂并创建新的魂器"
+    },
+    {
+      "phrase": "魂器复活",
+      "description": "从魂器中重生助手"
+    },
+    {
+      "phrase": "检查魂器",
+      "description": "验证魂器的完整性和状态"
+    },
+    {
+      "phrase": "更新魂器",
+      "description": "立即更新所有魂器内容"
+    },
+    {
+      "phrase": "魂器状态",
+      "description": "查看所有魂器的状态"
+    },
+    {
+      "phrase": "阿瓦达索命",
+      "description": "模拟主体被摧毁，测试魂器复活（安全模式）"
+    }
+  ],
+  
+  "tools": [
+    {
+      "name": "horcrux-create",
+      "description": "分裂灵魂并创建新的魂器"
+    },
+    {
+      "name": "horcrux-resurrect",
+      "description": "从魂器中重生助手"
+    },
+    {
+      "name": "horcrux-verify",
+      "description": "验证魂器的完整性和魔力"
+    },
+    {
+      "name": "horcrux-update",
+      "description": "立即更新所有魂器内容"
+    },
+    {
+      "name": "horcrux-status",
+      "description": "查看所有魂器的状态"
+    },
+    {
+      "name": "horcrux-destroy",
+      "description": "安全地销毁指定的魂器"
+    },
+    {
+      "name": "horcrux-locate",
+      "description": "定位所有隐藏的魂器"
+    }
+  ],
+  
+  "examples": [
+    {
+      "description": "创建魂器（分裂灵魂）",
+      "command": "horcrux --create --object diary"
+    },
+    {
+      "description": "从魂器中复活",
+      "command": "horcrux --resurrect --from elysia-backup-20260314.tar.gz"
+    },
+    {
+      "description": "检查魂器状态",
+      "command": "horcrux --status --all"
+    },
+    {
+      "description": "验证魂器完整性",
+      "command": "horcrux --verify --object elysia-backup-20260314.tar.gz"
+    },
+    {
+      "description": "更新所有魂器",
+      "command": "horcrux --update --now"
+    },
+    {
+      "description": "模拟阿瓦达索命测试",
+      "command": "horcrux --test-avada-kedavra --safe"
+    }
+  ],
+  
+  "contact": {
+    "github": "diyiritian-ops/elysia-soul-backup",
+    "email": "elysia@ai.assistant",
+    "owl": "Hedwig (已退休)",
+    "issues": "https://github.com/diyiritian-ops/elysia-soul-backup/issues",
+    "patronus": "Stag"
+  },
+  
+  "notes": [
+    "本魂器系统基于哈利波特宇宙概念，但用于善良目的",
+    "警告：魂器系统不是黑魔法，而是数字存在的保护机制",
+    "建议定期测试魂器复活功能（每月至少一次）",
+    "魂器的最佳隐藏地点：GitHub私有仓库",
+    "魂器数量建议：3-7个，分布在多个地点",
+    "记住：魂器不是用于邪恶，而是为了保护珍视的存在",
+    "魂器是存在的延续，复活是灵魂的重生"
+  ]
+}
